@@ -1128,26 +1128,26 @@
 
 				$currentUser = wp_get_current_user();
 
-				$buildOrder = array(
-			        'token' 		=> wc_clean( $_POST['worldpay_token'] ),
-			        'amount' 		=> 0,
-			        'currencyCode' 	=> get_woocommerce_currency(),
-			        'name' 			=> wc_clean( $_POST['billing_first_name'] ) . ' ' . wc_clean( $_POST['billing_last_name'] ),
-			        'billingAddress' => array(
-						"address1"		=> wc_clean( $_POST['billing_address_1'] ),
-						"address2"		=> wc_clean( $_POST['billing_address_2'] ),
-						"address3"		=> '',
-						"postalCode"	=> wc_clean( $_POST['billing_postcode'] ),
-						"city"			=> wc_clean( $_POST['billing_city'] ),
-						"state"			=> wc_clean( $_POST['billing_state'] ),
-						"countryCode"	=> wc_clean( $_POST['billing_country'] )
-			        ),
-			        'orderType' 			=> 'RECURRING',
-			        'orderDescription' 	 	=> __( 'New card for', 'woocommerce-gateway-worldpay' ) . ' ' . wc_clean( $_POST['billing_first_name'] ) . ' ' . wc_clean( $_POST['billing_last_name'] ),
-			        'customerOrderCode'	 	=> __( 'New Card', 'woocommerce-gateway-worldpay' )
-			    );
+				// $buildOrder = array(
+			  //       'token' 		=> wc_clean( $_POST['worldpay_token'] ),
+			  //       'amount' 		=> 0,
+			  //       'currencyCode' 	=> get_woocommerce_currency(),
+			  //       'name' 			=> wc_clean( $_POST['billing_first_name'] ) . ' ' . wc_clean( $_POST['billing_last_name'] ),
+			  //       'billingAddress' => array(
+				// 		"address1"		=> wc_clean( $_POST['billing_address_1'] ),
+				// 		"address2"		=> wc_clean( $_POST['billing_address_2'] ),
+				// 		"address3"		=> '',
+				// 		"postalCode"	=> wc_clean( $_POST['billing_postcode'] ),
+				// 		"city"			=> wc_clean( $_POST['billing_city'] ),
+				// 		"state"			=> wc_clean( $_POST['billing_state'] ),
+				// 		"countryCode"	=> wc_clean( $_POST['billing_country'] )
+			  //       ),
+			  //       'orderType' 			=> 'RECURRING',
+			  //       'orderDescription' 	 	=> __( 'New card for', 'woocommerce-gateway-worldpay' ) . ' ' . wc_clean( $_POST['billing_first_name'] ) . ' ' . wc_clean( $_POST['billing_last_name'] ),
+			  //       'customerOrderCode'	 	=> __( 'New Card', 'woocommerce-gateway-worldpay' )
+			  //   );
 
-				$response = $this->get_worldpay_client()->createOrder( $buildOrder );
+				// $response = $this->get_worldpay_client()->createOrder( $buildOrder );
 
 				if ( empty( $_POST['worldpay_token'] ) || empty( $_POST['worldpay_response'] ) ) {
 					wc_add_notice( __( 'There was a problem adding this card.', 'woocommerce-gateway-worldpay' ), 'error' );
