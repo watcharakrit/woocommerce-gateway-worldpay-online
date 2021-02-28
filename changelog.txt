@@ -1,0 +1,107 @@
+*** WorldPay Online Changelog ***
+2020.11.26 - version 2.1.4
+ * Improve transaction flow
+ * Additional logging
+
+2020.11.05 - version 2.1.3
+ * Rework 3D Secure process to avoid cart clearing in the event of a failure.
+
+2020.10.21 - version 2.1.2
+ * Fix for "Add Payment Method"
+ * Don't unblock except for errors
+
+2020.10.09 - version 2.1.1
+ * Make sure 3DS failures return to checkout
+ * Make sure error message display in Chrome
+ * Make error messages more understandable
+
+2020.07.15 - version 2.1.0
+ * Improved order notes
+ * Improved testing options
+ * WooCommerce 4.3
+ * Fix Undefined class constant 'ORDER_CREATED'
+ 
+2020.05.28 - version 2.0.17
+ * Make sure non-3D Secure orders are redirected to Thank You page
+
+2020.05.25 - version 2.0.16
+ * Remove developer debugging
+
+2020.05.25 - version 2.0.15
+ * Version bump
+
+2020.05.17 - version 2.0.14
+ * Fix sessions for Google Chrome
+ * Fix Worldpay checkout form constant "loading"
+
+2020.04.23 - version 2.0.13
+ * Fix refunds
+ * WC 4.1
+ * Fix dependancies in admin
+
+2020.01.07 - version 2.0.12
+ * Fix WP checkout form not loading
+
+2019.12.19 - version 2.0.11
+ * Code tidy up
+ * Fixes for Multisite
+ * Remove legacy subscription functions
+
+2019.12.14 - version 2.0.10
+ * Add additional testing for AVS results
+ * WC 3.8
+ * Validate shopper IP address
+ * Use $order->get_checkout_order_received_url() for OK
+
+2019.06.25 - version 2.0.9
+ * PARTIALLY_REFUNDED webhook
+ * Improved order notes
+ * Add translations
+ * Remove legacy code for currencies.
+
+2019.05.21 - version 2.0.8
+ * Add Webhooks
+ * Fix missing translations
+
+2019.04.18 - version 2.0.7
+ * WC 3.6 notice
+ * Fix "Pay for Order" 
+ * Remove none working add_payment_method temporarily.
+
+2018.11.23 - version 2.0.6
+ * Improve Test/Live check
+
+2018.11.22 - version 2.0.5
+ * Fix JS if statement in own form
+
+2018.11.09 - version 2.0.4
+ * WooCommerce 3.5
+ * Fix WooCommerce checkout form not working in some scenarios with WC 3.5
+ * Update keys
+
+2018.09.25 - version 2.0.3
+ * Renew Keys
+ * Fix plugin links
+ * Fix json rounding error
+
+2018.09.17 - version 2.0.2
+ * Lowercase P
+
+2018.08.17 - version 2.0.1
+ * Woo headers
+ * sign up URL
+
+2018.06.04 - version 2.0.0
+ * Fix - 3D Secure support.
+ * Fix - Partial Refunds.
+ * General - Add Pre-Orders support.
+ * General - Ability to capture AUTHORISED payments in admin.
+ * General - Add Subscriptions support.
+ * General - Token support
+ * General - Option to use WooCommerce checkout form - requires SSL certificate.
+ * Fix - missing translations
+ * General - Add transaction information to order notes
+ * General - Sequential Order Number support
+ * General - Woo Headers
+ * General - WC 3.4 support
+ * General - PHP 7.2 fixes
