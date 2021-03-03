@@ -1,4 +1,8 @@
 *** WorldPay Online Changelog ***
+2021.03.04 - version 2.1.5
+ * Fix init payment form saved card.
+ * Fix add payment method not to not required billing information.
+
 2020.11.26 - version 2.1.4
  * Improve transaction flow
  * Additional logging

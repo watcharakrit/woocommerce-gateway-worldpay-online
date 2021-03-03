@@ -3,7 +3,7 @@
  * Plugin Name: Worldpay Online Payments
  * Plugin URI: https://woocommerce.com/products/worldpay-online-payments/
  * Description: A plugin for integrating Worldpay Online Payments with WooCommerce..
- * Version: 2.1.4
+ * Version: 2.1.5
  * Author: Worldpay, WooCommerce, Andrew Benbow
  * Developer: Andrew Benbow
  * Author URI: http://www.chromeorange.co.uk
@@ -51,7 +51,7 @@ woothemes_queue_update( plugin_basename( __FILE__ ), 'ee95ecddca66ba1374158b6e52
 /**
  * Defines
  */
-define( 'WPOLVERSION', 		'2.1.4' );
+define( 'WPOLVERSION', 		'2.1.5' );
 define( 'WPOLSETTINGS', 	admin_url( 'admin.php?page=wc-settings&tab=checkout&section=wc_gateway_worldpay' ) );
 define( 'WPOLSUPPORTURL', 	'http://support.woocommerce.com/' );
 define( 'WPOLDOCSURL', 		'https://docs.woocommerce.com/document/worldpay-online-payment-gateway/');

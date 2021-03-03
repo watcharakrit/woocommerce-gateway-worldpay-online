@@ -8,7 +8,7 @@ WorldpayCheckout = function( $ ) {
     var reattachHandlers = function() {
         $(form).off( "checkout_place_order_WC_Gateway_Worldpay");
         $(form).on( "checkout_place_order_WC_Gateway_Worldpay", function(){
-            if ($('#worldpay_use_saved_card_details').attr('checked')) {
+            if ($('#worldpay_use_saved_card_details').is(':checked')) {
                 WorldpayCheckout.updateCVC();
             } else {
                 checkSaveCardOn();
@@ -33,7 +33,7 @@ WorldpayCheckout = function( $ ) {
             $('#place_order').off().click(function(e){
                 if ($('#payment_method_WC_Gateway_Worldpay').is(':checked')) {
                     e.preventDefault();
-                    if ($('#worldpay_use_saved_card_details').attr('checked')) {
+                    if ($('#worldpay_use_saved_card_details').is(':checked')) {
                         WorldpayCheckout.updateCVC();
                     } else {
                         // checkSaveCardOn();
