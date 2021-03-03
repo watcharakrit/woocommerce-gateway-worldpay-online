@@ -19,10 +19,8 @@ class Worldpay_PaymentForm
 			add_action( 'wp_footer', array( __CLASS__, 'no_existing_details_script' ), 0 );
 		}
 
-		self::common_fields();
-
-		self::store_tokens_options( $storeTokens );
-
+		self::common_fields($cardDetails);
+		self::store_tokens_options( $storeTokens, $cardDetails );
 	}
 
 	public static function payment_errors_section() {
@@ -60,7 +58,7 @@ class Worldpay_PaymentForm
 				<input id="worldpay_use_saved_card_details" type="checkbox" name="worldpay_use_saved_card_details" checked/>
 			</p>
 			
-			<p class="form-row worldpay_new_card_fields form-row-wide">
+			<p class="form-row worldpay_new_card_fields form-row-wide" <?=$card_details? 'style="display: none;"': ''?>>
 				<strong>
 					New card details:
 				</strong>
@@ -68,9 +66,9 @@ class Worldpay_PaymentForm
 		<?php
 	}
 
-	public static function common_fields() {
+	public static function common_fields($cardDetails) {
 		?>
-			<div class="worldpay_new_card_fields" id="worldpay-templateform">Loading..</div>
+			<div class="worldpay_new_card_fields" id="worldpay-templateform" <?=$cardDetails? 'style="display: none;"': ''?>>Loading..</div>
 		<?php
 	}
 
@@ -99,10 +97,10 @@ class Worldpay_PaymentForm
 		<?php
 	}
 
-	public static function store_tokens_options( $storeTokens ) {
+	public static function store_tokens_options( $storeTokens, $cardDetails ) {
 		if( $storeTokens ) {
 		?>
-		<p class="form-row form-row-wide">
+		<p class="form-row form-row-wide" <?=$cardDetails? 'style="display: none;"': ''?>>
 			<label for="worldpay_save_card_details">
 				<?php echo __('Save card details?') ?>
 			</label>
@@ -135,16 +133,10 @@ class Worldpay_PaymentForm
 			<script type="text/javascript">
 				jQuery(function($){
 					$(document).ready(function(){
-						var checkbox = document.getElementsByName('worldpay_use_saved_card_details')[0];
-						var newCardFormSections = $('.worldpay_new_card_fields');
-						if(checkbox != null)
-						{
-							newCardFormSections.hide();
-							$(checkbox).click(function()
-							{
-								newCardFormSections.toggle();
-							});
-						}
+						$('#order_review').on('click', '#worldpay_use_saved_card_details', function() {
+							$('.worldpay_new_card_fields').toggle();
+							$('#worldpay_save_card_details').parent().toggle();
+						})
 						WorldpayCheckout.setupNewCardForm();
 					});
 				});
